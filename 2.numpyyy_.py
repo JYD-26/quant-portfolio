@@ -1,4 +1,4 @@
-import numpy as np
+import numpyyy_ as np
 
 '''
 배열 연산 패키지 : 넘파이
