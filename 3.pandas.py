@@ -56,3 +56,20 @@ C    3
 D    4
 dtype: int64
 '''
+
+
+#시리즈 인덱스는 index속성으로 데이터는 values속성으로 접근
+print("접근관련")
+print(s3.values) #[1 2 3 4]
+print(s3.index) #Index(['A', 'B', 'C', 'D'], dtype='object')
+
+#시리즈의 인덱스는 Index라는 자료형임을 알 수 있다. 이 자료형은 배열과 유사하나 연산은 집합과 유사하다.
+print("\nIndex자료형 연산 - 집합")
+print(s1.index.intersection(s3.index)) # s1 교칩합 s3
+# Index(['A', 'B', 'C'], dtype='object')
+
+print(s2.index.union(s3.index)) # s2 합칩합 s3
+#Index([0, 1, 2, 'A', 'B', 'C', 'D'], dtype='object')
+
+print(s3.index.difference(s1.index))# s3 차집합 s1
+# Index(['D'], dtype='object')
