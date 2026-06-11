@@ -46,10 +46,22 @@ print(df1.columns)
 
 '''시리즈와 마찬가지로 데이터는 ndarray자료형이며, 인덱스와 칼럼은 Index 자료형'''
 
-#계정변경
 
+# 현실적인 데이터 프레임 생성 방법
+print("################################")
+msg_list = ["numpy","pandas","matplotlib"] #메세지 목록 정의
+data = [] #연산결과 저장할 변후 리스트로 초기화
+for msg in msg_list: # 데이터 프레임의 행을 만듬
+      record=[msg]
+      for x in ["a","p","n"]:
+         record.append(msg.count(x)) #내부 for문을 통해 들어갈 데이터 (각 알파벳이 몇 회 등장했는지설정)
+      data.append(record)
+data = pd.DataFrame(data, columns=["message","a","p","n"]) #중첩 리스트인 데이타를 데이터 프레임으로 바꿈. 
+print(data)    
+'''
+      message  a  p  n
+0       numpy  0  1  1
+1      pandas  2  1  1
+2  matplotlib  1  1  0
 
 '''
-
-'''
-
